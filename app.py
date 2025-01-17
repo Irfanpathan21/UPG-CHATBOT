@@ -32,10 +32,13 @@ def home():
 
 @app.route('/ask', methods=['POST'])
 def ask():
-    user_question = request.form['question']
-    chat_session = model.start_chat(history=[])
-    response = chat_session.send_message(user_question)
-    return jsonify({'answer': response.text})
+    try:
+        user_question = request.form['question']
+        chat_session = model.start_chat(history=[])
+        response = chat_session.send_message(user_question)
+        return jsonify({'answer': response.text})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
