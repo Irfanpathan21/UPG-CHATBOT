@@ -154,6 +154,19 @@ input {
     width: 75px;
     height: 75px;
 }
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
 
 
 /* Optional scrollbar styling */
