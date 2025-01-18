@@ -170,64 +170,111 @@ input {
     background-color: #1d1e18;
 }
 /* Responsive */
-@media screen and (max-width: 768px) {
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 0 10px;
     }
+    body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+     }
     .Nav_Bar_Class ul li a:hover {
-        color: #E12F2B;
+            color: #E12F2B;
     }
     .Nav_Bar_Class ul {
+            display: none;
+            width: 100%;
+            position: absolute;
+            top: 75px;
+            left: 0;
+            background-color: #000;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+    }
+    
+    .Nav_Bar_Class ul li {
+            margin: 15px 0;
+    }
+    
+    .Nav_Bar_Class ul li a {
+            font-size: 18px;
+    }
+    
+    .hamburger {
+            display: flex;
+    }
+    
+        /* Menu visibility toggle using the checkbox */
+    .menu-toggle:checked + .hamburger + ul {
+            display: flex;
+    }
+    
+        /* Animation for the hamburger icon when checked */
+    .menu-toggle:checked + .hamburger div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle:checked + .hamburger div:nth-child(2) {
+            opacity: 0;
+    }
+    
+    .menu-toggle:checked + .hamburger div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .menu-toggle:checked ~ .Nav_Bar_Class .logo-container{
+            display: none;
+    }
+    .hamburger {
+        display: block;
+        order: -1; /* Move to left */
+        margin-right: auto;
+    }
+
+    .Nav_Bar_Class ul {
         display: none;
-        width: 100%;
-        position: absolute;
+        position: fixed;
         top: 75px;
         left: 0;
-        background-color: #000;
+        width: 100%;
+        background: #000;
         flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
+        padding: 20px 0;
+
+    }
+
+    .Nav_Bar_Class ul.active {
+        display: flex;
     }
 
     .Nav_Bar_Class ul li {
         margin: 15px 0;
     }
 
-    .Nav_Bar_Class ul li a {
-        font-size: 18px;
+    /* Hamburger animation classes */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
     }
-
-    .hamburger {
-        display: flex;
-    }
-
-    /* Menu visibility toggle using the checkbox */
-    .menu-toggle:checked + .hamburger + ul {
-        display: flex;
-    }
-
-    /* Animation for the hamburger icon when checked */
-    .menu-toggle:checked + .hamburger div:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-toggle:checked + .hamburger div:nth-child(2) {
+    
+    .hamburger.active div:nth-child(2) {
         opacity: 0;
     }
-
-    .menu-toggle:checked + .hamburger div:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+    
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
-    .menu-toggle:checked ~ .Nav_Bar_Class .logo-container{
-        display: none;
+    .Nav_Bar_Class ul li img.logo {
+        display: none; /* Hide logo on mobile */
     }
+    }
+    
 
 /* Animation keyframes */
 @keyframes fadeIn {
