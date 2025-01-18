@@ -98,8 +98,8 @@ input {
 }
 
 .send-button {
-    padding: 8px; /* Smaller button */
-   
+    padding: 1px; /* Smaller button */
+    margin: 5px; /* Add margin */
     color: #fff;
     border: none;
     border-radius: 6px;
