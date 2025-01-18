@@ -66,7 +66,7 @@
                 aiMessage.className = 'ai-message';
                 aiMessage.innerText = data.answer;
                 document.getElementById('user-messages').appendChild(aiMessage); // Append AI message to the same container
-                
+                document.getElementById('question').value = ''; // Clear the input field after sending the message
             });
         });
     </script>
