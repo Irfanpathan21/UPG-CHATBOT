@@ -19,7 +19,6 @@
           <li><a href="#">HOME</a></li>
           <li><a href="#">ABOUT</a></li>
           <li><a href="#">DEPARTMENTS</a></li>
-          <li><a href="#">PROJECTS</a></li>
           <li>
             <a href="index.html">
               <img src="../static/assets/itclublogo.png" alt="Logo" class="logo" />
@@ -62,14 +61,12 @@
             .then(response => response.json())
             .then(data => {
                 const userMessage = document.createElement('div');
-                userMessage.className = 'user-message';
                 userMessage.style.display = 'inline-block';
                 userMessage.innerText = question;
                 document.getElementById('user-messages').appendChild(userMessage);
 
                 const aiMessage = document.createElement('div');
                 aiMessage.className = 'ai-message';
-                aiMessage.style.display = 'inline-block';
                 aiMessage.innerText = data.answer;
                 document.getElementById('user-messages').appendChild(aiMessage);
                 document.getElementById('question').value = '';
