@@ -55,7 +55,7 @@ body {
 
 /* User message bubbles */
 .user-message {
-    background-color: #fbb60a;
+    background-color: #fbb60a !important;
     color: rgb(255, 255, 255);
     padding: 12px;
     border-radius: 10px;    
@@ -91,7 +91,7 @@ form {
 input {
     padding: 12px;
     margin-bottom: 0;
-    border: 1px solid #000000;
+    border: 1px solid #fbb60a;
     border-radius: 20px;
     flex-grow: 1; /* Allow input to take available space */
     margin: 0%;
@@ -111,6 +111,8 @@ input {
 .send-button:hover {
     background: linear-gradient(90deg, #124388, #c26a14);
 }
+
+/* Navigation Bar Styling */
 .Nav_Bar_Class {
     position: fixed; /* Fixed position to stick to the top */
     width: 100%;
