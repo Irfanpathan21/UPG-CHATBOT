@@ -55,6 +55,7 @@ body {
 
 /* User message bubbles */
 .user-message {
+    background-color: #fbb60a;
     background-color: #fbb60a !important;
     color: rgb(255, 255, 255);
     padding: 12px;
@@ -91,6 +92,7 @@ form {
 input {
     padding: 12px;
     margin-bottom: 0;
+    border: 1px solid #000000;
     border: 1px solid #fbb60a;
     border-radius: 20px;
     flex-grow: 1; /* Allow input to take available space */
@@ -99,7 +101,7 @@ input {
 
 .send-button {
     padding: 8px; /* Smaller button */
-   
+
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -111,18 +113,17 @@ input {
 .send-button:hover {
     background: linear-gradient(90deg, #124388, #c26a14);
 }
-
 /* Navigation Bar Styling */
 .Nav_Bar_Class {
-    position: static;
+    position: fixed; /* Fixed position to stick to the top */
     width: 100%;
     height: 75px;
     top: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #000;
-    z-index: 1000;
-    padding: 0 2rem; /* Add horizontal padding */
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
 .Nav_Bar_Class ul {
@@ -136,15 +137,9 @@ input {
 }
 
 .Nav_Bar_Class ul li {
-    padding: 0 20px;
+    margin: 0 20px;
     display: flex;
     align-items: center;
-    position: relative;
-}
-
-/* Logo specific styling */
-.Nav_Bar_Class ul li:nth-child(4) {
-    margin: 0 45px; /* Give logo more space */
 }
 
 .Nav_Bar_Class ul li a {
@@ -154,7 +149,6 @@ input {
     font-weight: bold;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    padding: 5px 10px; /* Add padding around text */
 }
 
 .Nav_Bar_Class ul li a:hover {
@@ -182,16 +176,16 @@ input {
 
 /* Optional scrollbar styling */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background: #E12F2B;
+    border-radius: 10px;
+    background: #F26457;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #E12F2B;
+    background-color: #1d1e18;
 }
 /* Responsive */
 @media (max-width: 600px) {
@@ -223,33 +217,33 @@ input {
             align-items: center;
             padding: 10px 0;
     }
-    
+
     .Nav_Bar_Class ul li {
             margin: 15px 0;
     }
-    
+
     .Nav_Bar_Class ul li a {
             font-size: 18px;
     }
-    
+
     .hamburger {
             display: flex;
     }
-    
+
         /* Menu visibility toggle using the checkbox */
     .menu-toggle:checked + .hamburger + ul {
             display: flex;
     }
-    
+
         /* Animation for the hamburger icon when checked */
     .menu-toggle:checked + .hamburger div:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .menu-toggle:checked + .hamburger div:nth-child(2) {
             opacity: 0;
     }
-    
+
     .menu-toggle:checked + .hamburger div:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
     }
@@ -286,11 +280,11 @@ input {
     .hamburger.active div:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
-    
+
     .hamburger.active div:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger.active div:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
@@ -298,7 +292,7 @@ input {
         display: none; /* Hide logo on mobile */
     }
     }
-    
+
 
 /* Animation keyframes */
 @keyframes fadeIn {
