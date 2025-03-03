@@ -57,7 +57,8 @@
             .then(response => response.json())
             .then(data => {
                 const userMessage = document.createElement('div');
-                userMessage.style.display = 'inline-block';
+                userMessage.className = 'user-message'; 
+               
                 userMessage.innerText = question;
                 document.getElementById('user-messages').appendChild(userMessage);
 
